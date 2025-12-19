@@ -1,0 +1,188 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: #0a3cff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.navbar a,
+.navbar a *,
+.navbar li,
+.navbar li * {
+    all: unset;
+}
+
+.navbar a {
+    cursor: pointer;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.logo span {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid yellow;
+    color: yellow;
+}
+
+ul li a.active {
+    border-bottom: 2px solid yellow;
+    color: yellow;
+}
+
+/* ================= MAIN CONTAINER ================= */
+
+.container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+.container h1,
+.container h2 {
+    margin-bottom: 15px;
+    color: #0a3cff;
+}
+
+/* Paragraph */
+.container p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Links inside container */
+.container a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #0a3cff;
+    font-weight: bold;
+}
+
+/* ================= TASK LIST ================= */
+
+ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+ul li {
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #f1f3f6;
+    border-radius: 6px;
+    text-align: left; /* Align content neatly */
+}
+
+/* Completed task */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Mark done link */
+ul li a {
+    margin-left: 15px;
+    color: #0a3cff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Deadline styling */
+ul li .deadline {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: #c0392b; /* red color for deadline */
+}
+
+/* ================= FORM ================= */
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    align-items: flex-start; 
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 10px 18px;
+    margin-left: 8px;
+    border: none;
+    background-color: #0a3cff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0026b3;
+}
+
+/* Progress text */
+.progress {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .container { padding: 15px; }
+    input[type="text"], input[type="datetime-local"], button, a { width: 100%; text-align: center; }
+    nav.navbar { flex-direction: column; gap: 10px; }
+    nav.navbar .nav-links { flex-direction: column; gap: 5px; }
+}
+
