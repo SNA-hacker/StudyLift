@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StudyLift</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="StudyLift Logo">
+            <span>StudyLift</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+            <li><a href="{{ url_for('add_task') }}">Add Task</a></li>
+            <li><a href="{{ url_for('view_tasks') }}">View Tasks</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <h1>Welcome to StudyLift</h1>
+        <p>A free study planner to help students organize daily study tasks.</p>
+        <a href="{{ url_for('add_task') }}">Start Planning</a>
+    </div>
+</body>
+</html>

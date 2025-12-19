@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Tasks - StudyLift</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="StudyLift Logo">
+            <span>StudyLift</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('add_task') }}">Add Task</a></li>
+            <li><a href="{{ url_for('view_tasks') }}" class="active">View Tasks</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Your Study Tasks</h2>
+        <p class="progress">Completed {{ completed }} out of {{ total }} tasks</p>
+        <ul>
+    {% for task in tasks %}
+        <li class="{% if task.done %}completed{% endif %}">
+            <strong>Task:</strong> {{ task.name }} &nbsp; | &nbsp;
+            <strong>Added:</strong> {{ task.date_added.split(' ')[0] }} &nbsp; | &nbsp;
+            <strong>Time:</strong> {{ task.date_added.split(' ')[1] }} &nbsp; | &nbsp;
+            <strong>Deadline:</strong> {{ task.deadline.replace('T', ' ') }}
+            
+            {% if not task.done %}
+                &nbsp; | &nbsp;
+                <a href="{{ url_for('complete_task', task_id=loop.index0) }}">Mark Done</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+        <a href="{{ url_for('add_task') }}">Add More Tasks</a>
+    </div>
+</body>
+</html>
+
+

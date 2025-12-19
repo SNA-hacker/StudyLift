@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Task - StudyLift</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="{{ url_for('static', filename='logo.jpg') }}"
+          alt="StudyLift Logo"
+        />
+        <span>StudyLift</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('add_task') }}" class="active">Add Task</a></li>
+        <li><a href="{{ url_for('view_tasks') }}">View Tasks</a></li>
+      </ul>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+      <h2>Add a Study Task</h2>
+
+      <form method="POST" action="{{ url_for('add_task') }}">
+        <label for="task">Task Name:</label>
+        <input type="text" name="task" required />
+        
+        <label for="deadline">Deadline:</label>
+        <input type="datetime-local" name="deadline" required />
+
+        <button type="submit">Add Task</button>
+      </form>
+
+      <a href="{{ url_for('view_tasks') }}">View Tasks</a>
+    </div>
+  </body>
+</html>
